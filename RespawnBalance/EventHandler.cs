@@ -27,7 +27,11 @@ namespace RespawnBalance
 				pRespawnCount.Add(player.PlayerId, 0);
 			}
 
-			ev.PlayerList = pRespawnCount.OrderBy(x => x.Value).Take(ev.PlayerList.Count).Select(x => GetPlayer(x.Key)).ToList();
+			ev.PlayerList = pRespawnCount.OrderBy(x => x.Value)
+				.Select(x => GetPlayer(x.Key))
+				.Where(x => x.TeamRole.Team == Smod2.API.Team.SPECTATOR)
+				.Take(ev.PlayerList.Count)
+				.ToList();
 
 			foreach (Player player in ev.PlayerList)
 			{
