@@ -27,7 +27,7 @@ namespace RespawnBalance
 				pRespawnCount.Add(player.PlayerId, 0);
 			}
 
-			ev.PlayerList = pRespawnCount.OrderBy(x => x.Value).Take(1).Select(x => GetPlayer(x.Key)).ToList();
+			ev.PlayerList = pRespawnCount.OrderBy(x => x.Value).Take(ev.PlayerList.Count).Select(x => GetPlayer(x.Key)).ToList();
 
 			foreach (Player player in ev.PlayerList)
 			{
