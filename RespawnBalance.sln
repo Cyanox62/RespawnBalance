@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RespawnBalance", "RespawnBalance\RespawnBalance.csproj", "{14B04916-1731-4DCF-A5A0-D0F0E2E35F9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14B04916-1731-4DCF-A5A0-D0F0E2E35F9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B04916-1731-4DCF-A5A0-D0F0E2E35F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B04916-1731-4DCF-A5A0-D0F0E2E35F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B04916-1731-4DCF-A5A0-D0F0E2E35F9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54DF1753-DB2D-4AEB-A914-1E756EA4740D}
+	EndGlobalSection
+EndGlobal
