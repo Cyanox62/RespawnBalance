@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace RespawnBalance
 {
-	partial class EventHandler : IEventHandlerTeamRespawn, IEventHandlerRoundRestart
+	partial class EventHandler : IEventHandlerTeamRespawn, IEventHandlerRoundRestart, IEventHandlerSpawn
 	{
 		private Plugin instance;
 
@@ -18,6 +18,19 @@ namespace RespawnBalance
 		public void OnRoundRestart(RoundRestartEvent ev)
 		{
 			pRespawnCount.Clear();
+		}
+
+		public void OnSpawn(PlayerSpawnEvent ev)
+		{
+			if (ev.Player.TeamRole.Team != Smod2.API.Team.SPECTATOR)
+			{
+				if (!pRespawnCount.ContainsKey(ev.Player.PlayerId))
+				{
+					pRespawnCount.Add(ev.Player.PlayerId, 0);
+				}
+
+				pRespawnCount[ev.Player.PlayerId]++;
+			}
 		}
 
 		public void OnTeamRespawn(TeamRespawnEvent ev)
@@ -32,11 +45,6 @@ namespace RespawnBalance
 				.Where(x => x.TeamRole.Team == Smod2.API.Team.SPECTATOR)
 				.Take(ev.PlayerList.Count)
 				.ToList();
-
-			foreach (Player player in ev.PlayerList)
-			{
-				pRespawnCount[player.PlayerId]++;
-			}
 		}
 	}
 }
