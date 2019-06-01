@@ -42,7 +42,7 @@ namespace RespawnBalance
 
 			ev.PlayerList = pRespawnCount.OrderBy(x => x.Value)
 				.Select(x => GetPlayer(x.Key))
-				.Where(x => x.TeamRole.Team == Smod2.API.Team.SPECTATOR)
+				.Where(x => x?.TeamRole.Team == Smod2.API.Team.SPECTATOR)
 				.Take(ev.PlayerList.Count)
 				.ToList();
 		}
